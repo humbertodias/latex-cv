@@ -1,4 +1,4 @@
-# Latex CV
+# Lattes CV
 Lattes Curriculum Vitae
 
 

@@ -9,5 +9,8 @@ en: en/cv.tex $(CV_SRCS)
 es: es/cv.tex $(CV_SRCS)
 	$(CC) -output-directory=es $<
 
+pt_br: pt-br/cv.tex $(CV_SRCS)
+	$(CC) -output-directory=pt-br $<
+
 clean:
 	find -E . -regex '.*\.(out|log|aux)' -exec rm -f {} \;

@@ -1,5 +1,5 @@
 # Latex CV
-Lattes Curriculum Vitae
+Latex Curriculum Vitae
 
 
 # Generate

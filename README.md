@@ -16,10 +16,17 @@ CV Spanish
 make es
 ```
 
+CV Portuguese
+
+```
+make pt_br
+```
+
 # Output
 On
 
 ```
 en/cv.pdf
 es/cv.pdf
+pt-br/cv.pdf
 ```

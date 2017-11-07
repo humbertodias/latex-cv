@@ -1,6 +1,11 @@
 # Latex CV
 Latex Curriculum Vitae
 
+# Dependencies
+
+```
+sudo apt-get install texlive-full
+```
 
 # Generate
 

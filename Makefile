@@ -13,4 +13,7 @@ pt_br: pt-br/cv.tex $(CV_SRCS)
 	$(CC) -output-directory=pt-br $<
 
 clean:
-	find -E . -regex '.*\.(out|log|aux)' -exec rm -f {} \;
+	# Mac
+	#find -E . -regex '.*\.(out|log|aux)' -exec rm -f {} \;
+	# Linux
+	find . -regextype posix-egrep -regex '.*\.(out|log|aux)' -exec rm -f {} \;

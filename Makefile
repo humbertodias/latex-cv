@@ -2,6 +2,7 @@
 
 CC = xelatex
 CV_SRCS = $(shell find . -name '*.tex')
+UNAME = $(shell uname)
 
 en: en/cv.tex $(CV_SRCS)
 	$(CC) -output-directory=en $<
@@ -9,11 +10,14 @@ en: en/cv.tex $(CV_SRCS)
 es: es/cv.tex $(CV_SRCS)
 	$(CC) -output-directory=es $<
 
-pt_br: pt-br/cv.tex $(CV_SRCS)
-	$(CC) -output-directory=pt-br $<
+pt_br: pt_br/cv.tex $(CV_SRCS)
+	$(CC) -output-directory=pt_br $<
 
 clean:
-	# Mac
-	#find -E . -regex '.*\.(out|log|aux)' -exec rm -f {} \;
-	# Linux
+ifeq ($(UNAME),Darwin)
+	find -E . -regex '.*\.(out|log|aux)' -exec rm -f {} \;
+endif
+
+ifeq ($(UNAME),Linux)
 	find . -regextype posix-egrep -regex '.*\.(out|log|aux)' -exec rm -f {} \;
+endif

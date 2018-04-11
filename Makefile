@@ -13,6 +13,11 @@ es: es/cv.tex $(CV_SRCS)
 pt_br: pt_br/cv.tex $(CV_SRCS)
 	$(CC) -output-directory=pt_br $<
 
+touch_all:
+	touch es/cs.tex
+	touch en/cs.tex
+	touch pt_br/cs.tex
+
 clean:
 ifeq ($(UNAME),Darwin)
 	find -E . -regex '.*\.(out|log|aux)' -exec rm -f {} \;

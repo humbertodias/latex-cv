@@ -1,10 +1,11 @@
 # Latex CV
+
 Latex Curriculum Vitae
 
 # Dependencies
 
 ```
-sudo apt-get install texlive-full
+sudo apt-get install texlive-full fonts-font-awesome
 ```
 
 # Generate
@@ -33,5 +34,13 @@ On
 ```
 en/cv.pdf
 es/cv.pdf
-pt-br/cv.pdf
+pt_br/cv.pdf
+```
+
+
+# Using Docker
+
+```
+docker build . -t texlive-builder
+docker run -it -v $(pwd):/home -w /home texlive-builder bash
 ```

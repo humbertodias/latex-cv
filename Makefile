@@ -1,22 +1,19 @@
 .PHONY: en
 
 CC = xelatex
-CV_SRCS = $(shell find . -name '*.tex')
 UNAME = $(shell uname)
 
-en: en/cv.tex $(CV_SRCS)
-	$(CC) -output-directory=en $<
-
-es: es/cv.tex $(CV_SRCS)
-	$(CC) -output-directory=es $<
-
-pt_br: pt_br/cv.tex $(CV_SRCS)
-	$(CC) -output-directory=pt_br $<
+en: touch_all
+	cd en && $(CC) cv.tex && cd ..
+es: touch_all
+	cd es && $(CC) cv.tex && cd ..
+pt_br: touch_all
+	cd pt_br && $(CC) cv.tex && cd ..
 
 touch_all:
-	touch es/cs.tex
-	touch en/cs.tex
-	touch pt_br/cs.tex
+	touch es/cv.tex
+	touch en/cv.tex
+	touch pt_br/cv.tex
 
 clean:
 ifeq ($(UNAME),Darwin)

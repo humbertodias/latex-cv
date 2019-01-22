@@ -23,3 +23,10 @@ endif
 ifeq ($(UNAME),Linux)
 	find . -regextype posix-egrep -regex '.*\.(out|log|aux)' -exec rm -f {} \;
 endif
+
+
+docker-build:
+	docker build . -t texlive-builder
+
+docker-run:
+	docker run -it -v $(PWD):/home -w /home texlive-builder bash

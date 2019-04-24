@@ -1,4 +1,4 @@
-FROM sumdoc/texlive-2017 
+FROM doldma/sumdoc-texlive-2017:2.0
 
 RUN apt update -y && \
 	apt install -y make fonts-font-awesome

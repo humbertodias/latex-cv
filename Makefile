@@ -24,6 +24,8 @@ ifeq ($(UNAME),Linux)
 	find . -regextype posix-egrep -regex '.*\.(out|log|aux)' -exec rm -f {} \;
 endif
 
+get-fonts-awesome:
+	wget https://raw.githubusercontent.com/posquit0/Awesome-CV/master/awesome-cv.cls -O awesome-cv.cls
 
 docker-build:
 	docker build . -t texlive-builder

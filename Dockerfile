@@ -1,7 +1,8 @@
-FROM doldma/sumdoc-texlive-2017:2.0
+FROM ubuntu:latest
 
-RUN apt update -y && \
-	apt install -y make fonts-font-awesome
+RUN export DEBIAN_FRONTEND=noninteractive && \
+	apt update -y && \
+	apt install -y make texlive-full fonts-font-awesome
 
 # docker build . -t texlive-builder
 # docker run -it -v $(pwd):/home -w /home texlive-builder bash
